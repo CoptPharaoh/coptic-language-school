@@ -16,19 +16,16 @@
 
 body{
   margin:0;
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-  background:
-    linear-gradient(rgba(251,247,238,.42), rgba(251,247,238,.42)),
+  font-family:Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  background-color:#f8f5ef;
+  background-image:
+    linear-gradient(rgba(248,245,239,.45), rgba(248,245,239,.45)),
     url("../images/official-site-background.png");
-  background-color:var(--bg);
-  background-size:auto, 420px auto;
-  background-position:0 0, center top;
   background-repeat:repeat;
+  background-size:760px auto;
   background-attachment:fixed;
   color:var(--ink);
   line-height:1.6;
-  text-rendering:optimizeLegibility;
-  -webkit-font-smoothing:antialiased;
 }
 
 .wrap{
