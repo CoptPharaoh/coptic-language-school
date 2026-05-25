@@ -158,79 +158,88 @@ function resetMatching() {
 /* Maze / Drawing Activity */
 
 function setupMazeCanvas() {
-  const canvas = document.getElementById("mazeCanvas");
-  if (!canvas) return;
+  const canvases = document.querySelectorAll(".draw-canvas, #mazeCanvas");
+  if (!canvases.length) return;
 
-  const wrapper = canvas.parentElement;
-  const ctx = canvas.getContext("2d");
+  canvases.forEach((canvas) => {
+    const wrapper = canvas.parentElement;
+    const ctx = canvas.getContext("2d");
 
-  let drawing = false;
+    let drawing = false;
 
-  function resizeCanvas() {
-    canvas.width = wrapper.clientWidth;
-    canvas.height = wrapper.clientHeight;
+    function resizeCanvas() {
+      canvas.width = wrapper.clientWidth;
+      canvas.height = wrapper.clientHeight;
 
-    ctx.lineWidth = 6;
-    ctx.lineCap = "round";
-    ctx.strokeStyle = "#d63c3c";
-  }
+      ctx.lineWidth = 6;
+      ctx.lineCap = "round";
+      ctx.strokeStyle = "#d63c3c";
+    }
 
-  resizeCanvas();
+    resizeCanvas();
 
-  window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("resize", resizeCanvas);
 
-  function getPosition(event) {
-    const rect = canvas.getBoundingClientRect();
-    const touch = event.touches ? event.touches[0] : event;
+    function getPosition(event) {
+      const rect = canvas.getBoundingClientRect();
+      const touch = event.touches ? event.touches[0] : event;
 
-    return {
-      x: touch.clientX - rect.left,
-      y: touch.clientY - rect.top,
-    };
-  }
+      return {
+        x: touch.clientX - rect.left,
+        y: touch.clientY - rect.top,
+      };
+    }
 
-  function startDrawing(event) {
-    event.preventDefault();
+    function startDrawing(event) {
+      event.preventDefault();
 
-    drawing = true;
+      drawing = true;
 
-    const pos = getPosition(event);
+      const pos = getPosition(event);
 
-    ctx.beginPath();
-    ctx.moveTo(pos.x, pos.y);
-  }
+      ctx.beginPath();
+      ctx.moveTo(pos.x, pos.y);
+    }
 
-  function draw(event) {
-    if (!drawing) return;
+    function draw(event) {
+      if (!drawing) return;
 
-    event.preventDefault();
+      event.preventDefault();
 
-    const pos = getPosition(event);
+      const pos = getPosition(event);
 
-    ctx.lineTo(pos.x, pos.y);
-    ctx.stroke();
-  }
+      ctx.lineTo(pos.x, pos.y);
+      ctx.stroke();
+    }
 
-  function stopDrawing() {
-    drawing = false;
-  }
+    function stopDrawing() {
+      drawing = false;
+    }
 
-  canvas.addEventListener("mousedown", startDrawing);
-  canvas.addEventListener("mousemove", draw);
-  canvas.addEventListener("mouseup", stopDrawing);
-  canvas.addEventListener("mouseleave", stopDrawing);
+    canvas.addEventListener("mousedown", startDrawing);
+    canvas.addEventListener("mousemove", draw);
+    canvas.addEventListener("mouseup", stopDrawing);
+    canvas.addEventListener("mouseleave", stopDrawing);
 
-  canvas.addEventListener("touchstart", startDrawing);
-  canvas.addEventListener("touchmove", draw);
-  canvas.addEventListener("touchend", stopDrawing);
+    canvas.addEventListener("touchstart", startDrawing, { passive: false });
+    canvas.addEventListener("touchmove", draw, { passive: false });
+    canvas.addEventListener("touchend", stopDrawing);
+  });
 }
 
-function clearMaze() {
-  const canvas = document.getElementById("mazeCanvas");
+function clearDrawing(target) {
+  const canvas =
+    typeof target === "string" ? document.querySelector(target) : target;
+
   if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function clearMaze() {
+  const canvas = document.getElementById("mazeCanvas");
+  clearDrawing(canvas);
 }
 
 document.addEventListener("DOMContentLoaded", setupMazeCanvas);
