@@ -56,13 +56,12 @@ function page(slug, name, coptic, sound) {
 <header class="topbar">
   <div class="wrap nav">
     <a class="brand" href="../index.html">
-      <span class="seal">✚</span>
+      <img src="../assets/images/midwest-logo.png" class="site-logo" alt="Midwest Coptic Logo">
       <span>Learn Coptic</span>
     </a>
 
     <nav class="links">
       <a href="../levels/level101.html">Level 101</a>
-      <a href="../recording-workflow.html">Workflow</a>
     </nav>
   </div>
 </header>

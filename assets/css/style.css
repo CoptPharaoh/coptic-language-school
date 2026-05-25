@@ -1,13 +1,13 @@
 :root{
   --bg:#f8f5ef;
-  --card:rgba(255,253,248,.94);
+  --card:rgba(255,253,248,.96);
   --ink:#26221b;
   --muted:#70675a;
   --brand:#8a1f1f;
   --brand2:#c79b45;
   --line:#eadfcd;
-  --shadow:0 10px 28px rgba(47,34,20,.08);
-  --radius:22px;
+  --shadow:0 14px 34px rgba(47,34,20,.08);
+  --radius:16px;
 }
 
 *{
@@ -17,20 +17,20 @@
 body{
   margin:0;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-
   background:
     linear-gradient(
-      rgba(248,245,239,.88),
-      rgba(248,245,239,.88)
+      rgba(248,245,239,.86),
+      rgba(248,245,239,.86)
     ),
     url("../images/official-site-background.png");
-
-  background-size:520px auto;
+  background-color:var(--bg);
+  background-size:auto;
   background-repeat:repeat;
   background-attachment:fixed;
-
   color:var(--ink);
   line-height:1.6;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
 }
 
 .wrap{
@@ -44,8 +44,9 @@ body{
   position:sticky;
   top:0;
   z-index:20;
-  background:rgba(248,245,239,.92);
-  backdrop-filter:blur(12px);
+  background:rgba(248,245,239,.9);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line);
 }
 
@@ -58,11 +59,12 @@ body{
 
 .brand{
   display:flex;
-  gap:10px;
+  gap:12px;
   align-items:center;
   text-decoration:none;
   color:var(--ink);
   font-weight:800;
+  min-width:0;
 }
 
 .seal{
@@ -77,13 +79,17 @@ body{
 }
 
 .site-logo{
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  object-fit:cover;
-  border:2px solid var(--brand2);
-  box-shadow:0 4px 12px rgba(47,34,20,.14);
-  background:white;
+  width:52px;
+  height:52px;
+  flex:0 0 auto;
+  display:block;
+  border-radius:0;
+  object-fit:contain;
+  object-position:center;
+  border:0;
+  box-shadow:none;
+  background:transparent;
+  image-rendering:auto;
 }
 
 .links{
@@ -97,6 +103,12 @@ body{
   text-decoration:none;
   font-weight:650;
   font-size:14px;
+  padding:8px 2px;
+  transition:color .2s ease;
+}
+
+.links a:hover{
+  color:var(--brand);
 }
 
 /* HERO */
@@ -119,7 +131,6 @@ body{
   font-size:clamp(38px,7vw,74px);
   line-height:1.02;
   margin:18px 0 14px;
-  letter-spacing:-.05em;
 }
 
 .hero p{
@@ -132,7 +143,7 @@ body{
   display:inline-flex;
   gap:8px;
   align-items:center;
-  background:#fff;
+  background:rgba(255,255,255,.88);
   border:1px solid var(--line);
   border-radius:999px;
   padding:8px 12px;
@@ -152,7 +163,7 @@ body{
 
 .btn{
   border:0;
-  border-radius:999px;
+  border-radius:12px;
   padding:13px 18px;
   font-weight:800;
   text-decoration:none;
@@ -160,11 +171,17 @@ body{
   align-items:center;
   gap:8px;
   cursor:pointer;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
 }
 
 .primary{
   background:var(--brand);
   color:#fff;
+  box-shadow:0 8px 18px rgba(138,31,31,.18);
 }
 
 .secondary{
@@ -206,6 +223,7 @@ body{
   box-shadow:var(--shadow);
   padding:22px;
   backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
 }
 
 .card h3{
@@ -233,7 +251,7 @@ body{
   align-items:center;
   background:rgba(255,255,255,.9);
   border:1px solid var(--line);
-  border-radius:18px;
+  border-radius:14px;
   padding:16px;
   text-decoration:none;
   color:var(--ink);
@@ -283,7 +301,7 @@ body{
 .vocab-card{
   background:rgba(255,255,255,.92);
   border:1px solid var(--line);
-  border-radius:18px;
+  border-radius:14px;
   padding:16px;
 }
 
@@ -343,7 +361,7 @@ body{
   border-top:1px solid var(--line);
   color:var(--muted);
   font-size:14px;
-  background:rgba(248,245,239,.75);
+  background:rgba(248,245,239,.78);
 }
 
 .checklist li{
@@ -490,7 +508,7 @@ body{
   }
 
   .site-logo{
-    width:42px;
-    height:42px;
+    width:44px;
+    height:44px;
   }
 }

@@ -31,6 +31,7 @@ const htmlFiles = walk(root);
 for (const file of htmlFiles) {
 
   let html = fs.readFileSync(file, "utf8");
+  const prefix = file.includes("/levels/") || file.includes("/lessons/") ? "../" : "";
 
   // REMOVE WORKFLOW LINK
 
@@ -41,14 +42,21 @@ for (const file of htmlFiles) {
 
   // REPLACE CROSS ICON WITH MIDWEST LOGO
 
+  const logo = `<img src="${prefix}assets/images/midwest-logo.png" class="site-logo" alt="Midwest Coptic Logo">`;
+
   html = html.replace(
     /<span class="seal">.*?<\/span>/g,
+    logo
+  );
 
-    `<img class="site-logo" src="${
-      file.includes("/levels/") || file.includes("/lessons/")
-        ? "../"
-        : ""
-    }assets/images/midwest-logo.png" alt="Midwest Coptic Orthodox Churches logo">`
+  html = html.replace(
+    /<img\s+class="site-logo"\s+src="(?:\.\.\/)?assets\/images\/midwest-logo\.png"\s+alt="[^"]*">/g,
+    logo
+  );
+
+  html = html.replace(
+    /<img\s+src="(?:\.\.\/)?assets\/images\/midwest-logo\.png"\s+class="site-logo"\s+alt="[^"]*">/g,
+    logo
   );
 
   // REPLACE OLD WORDING
