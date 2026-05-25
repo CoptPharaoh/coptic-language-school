@@ -54,6 +54,26 @@ function checkAnswer(button, isCorrect) {
 let currentMatch = null;
 let matchProgress = {};
 
+function shuffleArray(items) {
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+
+  return items;
+}
+
+function shuffleMatchingButtons() {
+  document.querySelectorAll(".match-column").forEach((column) => {
+    const buttons = Array.from(column.querySelectorAll(".match-btn"));
+    shuffleArray(buttons).forEach((button) => {
+      column.appendChild(button);
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", shuffleMatchingButtons);
+
 document.addEventListener("click", function (event) {
   const btn = event.target.closest(".match-btn");
   if (!btn) return;
@@ -131,6 +151,8 @@ function resetMatching() {
   if (status) {
     status.textContent = "Start by clicking an English letter.";
   }
+
+  shuffleMatchingButtons();
 }
 
 /* Maze / Drawing Activity */
