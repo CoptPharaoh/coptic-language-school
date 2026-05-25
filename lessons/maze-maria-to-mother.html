@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Maria to My Mother Maze | Learn Coptic</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <img src="../assets/images/midwest-logo.png" class="site-logo" alt="Midwest Coptic Logo">
+      <span>Learn Coptic</span>
+    </a>
+
+    <nav class="links">
+      <a href="../levels/level101.html">Level 101</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="lesson-hero">
+  <div class="wrap">
+    <span class="badge">Level 101 • Activity</span>
+    <h1>Maria to My Mother Maze</h1>
+    <p>Use your mouse, finger, or stylus to draw a path from Maria to My Mother.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="card">
+      <h2>Vocabulary Practice</h2>
+      <p class="note">Listen to each word, repeat it, then draw the path from Maria to My Mother.</p>
+
+      <div class="audio-grid">
+        <div class="sound-card">
+          <div class="small-coptic">Ⲙⲁⲣⲓⲁ</div>
+          <strong>Maria</strong>
+
+          <button class="sound-btn" onclick="playAudio('../assets/audio/maria.m4a')">
+            🔊 Play Maria
+          </button>
+        </div>
+
+        <div class="sound-card">
+          <div class="small-coptic">ⲧⲁⲙⲁⲩ</div>
+          <strong>ta-mav — My Mother</strong>
+
+          <button class="sound-btn" onclick="playAudio('../assets/audio/tamay.m4a')">
+            🔊 Play My Mother
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="canvas-toolbar actions">
+      <button class="btn primary" onclick="clearDrawing('#mariaMotherMazeCanvas')">Clear Drawing</button>
+      <button class="btn secondary" onclick="clearDrawing('#mariaMotherMazeCanvas')">Try Again</button>
+    </div>
+
+    <div class="maze-wrapper">
+      <img src="../assets/images/maze-maria-mother.png" alt="Maria to My Mother maze worksheet">
+      <canvas id="mariaMotherMazeCanvas" class="draw-canvas" aria-label="Draw your maze path"></canvas>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">Level 101 • Maria to My Mother Maze</div>
+</footer>
+
+<script src="../assets/js/app.js"></script>
+
+</body>
+</html>
