@@ -4,7 +4,10 @@ function playAudio(file) {
     document.getElementById('audioPlayer') || new Audio();
 
   if (!document.getElementById('audioPlayer')) {
+
     player.id = 'audioPlayer';
+
+    document.body.appendChild(player);
   }
 
   player.src = file;
@@ -17,6 +20,7 @@ function playAudio(file) {
 }
 
 function flipCard(el) {
+
   el.classList.toggle('flipped');
 }
 
@@ -25,8 +29,28 @@ function checkAnswer(button, isCorrect) {
   const quizCard =
     button.closest('.quiz-card');
 
-  const result =
+  if (!quizCard) {
+
+    alert(
+      'Quiz card not found. Make sure the question is inside class="card quiz-card".'
+    );
+
+    return;
+  }
+
+  let result =
     quizCard.querySelector('.quiz-result');
+
+  if (!result) {
+
+    result =
+      document.createElement('p');
+
+    result.className =
+      'quiz-result';
+
+    quizCard.appendChild(result);
+  }
 
   if (isCorrect) {
 
@@ -36,6 +60,9 @@ function checkAnswer(button, isCorrect) {
     result.style.color =
       '#1fa55b';
 
+    result.style.fontWeight =
+      '700';
+
   } else {
 
     result.textContent =
@@ -43,5 +70,8 @@ function checkAnswer(button, isCorrect) {
 
     result.style.color =
       '#d63c3c';
+
+    result.style.fontWeight =
+      '700';
   }
 }
