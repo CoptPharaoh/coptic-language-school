@@ -36,7 +36,7 @@ const letters = [
   ["fai", "Fai", "Ϥ ϥ", "F"],
   ["khai", "Khai", "Ϧ ϧ", "Kh"],
   ["horee", "Horee", "Ϩ ϩ", "H"],
-  ["genga", "Genga", "Ϫ ϫ", "J"],
+  ["janja", "Janja", "Ϫ ϫ", "J"],
   ["cheema", "Cheema", "Ϭ ϭ", "Ch"],
 ];
 
