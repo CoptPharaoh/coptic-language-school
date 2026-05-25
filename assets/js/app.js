@@ -61,6 +61,8 @@ document.addEventListener("click", function (event) {
   const group = btn.dataset.group;
   const type = btn.dataset.type;
   const status = document.getElementById("matchStatus");
+  const board = btn.closest(".matching-board");
+  const requiredMatches = Number(board?.dataset.requiredMatches || 3);
 
   if (!status) return;
 
@@ -90,7 +92,7 @@ document.addEventListener("click", function (event) {
 
     status.textContent = "Correct! Keep matching.";
 
-    if (currentMatch.types.length >= 3) {
+    if (currentMatch.types.length >= requiredMatches) {
       document
         .querySelectorAll(`.match-btn[data-group="${group}"]`)
         .forEach((item) => {
