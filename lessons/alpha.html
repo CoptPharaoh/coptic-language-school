@@ -4,9 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
   <title>Alpha | Learn Coptic</title>
-
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
@@ -14,7 +12,6 @@
 
 <header class="topbar">
   <div class="wrap nav">
-
     <a class="brand" href="../index.html">
       <span class="seal">✚</span>
       <span>Learn Coptic</span>
@@ -24,126 +21,109 @@
       <a href="../levels/level101.html">Level 101</a>
       <a href="../recording-workflow.html">Workflow</a>
     </nav>
-
   </div>
 </header>
 
 <main>
 
-  <!-- HERO -->
-  <section class="lesson-hero">
-    <div class="wrap">
+<section class="lesson-hero">
+  <div class="wrap">
+    <span class="badge">Level 101 • Letter Lesson</span>
+    <h1>Alpha</h1>
+    <p>Learn the Coptic letter Alpha: uppercase Ⲁ and lowercase ⲁ.</p>
+  </div>
+</section>
 
-      <span class="badge">Level 101 • Lesson 1</span>
+<section class="section">
+  <div class="wrap lesson-layout">
 
-      <h1>Alpha</h1>
+    <div>
 
-      <p>
-        Learn the Coptic letter Alpha:
-        uppercase Ⲁ and lowercase ⲁ.
-      </p>
+      <div class="video-box">
+        <iframe
+          width="100%"
+          height="500"
+          src="https://www.youtube.com/embed/rCO4qLaYkSk"
+          title="Alpha Lesson"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
 
-    </div>
-  </section>
+      <h2>Practice Together</h2>
 
-  <!-- MAIN LESSON -->
-  <section class="section">
+      <div class="audio-grid">
 
-    <div class="wrap lesson-layout">
+        <div class="sound-card">
+          <div class="coptic">Ⲁ ⲁ</div>
+          <p>Alpha makes the sound “A.”</p>
 
-      <!-- LEFT SIDE -->
-      <div>
-
-        <!-- YOUTUBE VIDEO -->
-        <div class="video-box">
-
-          <iframe
-            width="100%"
-            height="500"
-            src="https://www.youtube.com/embed/rCO4qLaYkSk"
-            title="Alpha Lesson"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-
-        </div>
-
-        <!-- PRACTICE -->
-        <h2>Practice Together</h2>
-
-        <div class="audio-grid">
-
-          <div class="sound-card">
-
-            <div class="coptic">Ⲁ ⲁ</div>
-
-            <p>
-              Alpha makes the sound:
-              “A”
-            </p>
-
-            <button
-              class="sound-btn"
-              onclick="playAudio('../assets/audio/alpha.m4a')">
-
-              🔊 Play Alpha
-
-            </button>
-
-          </div>
-
-        </div>
-
-        <!-- TRY IT -->
-        <div class="card">
-
-          <h3>Try It Yourself</h3>
-
-          <ul class="checklist">
-            <li>Point to the Big Alpha.</li>
-            <li>Point to the Small Alpha.</li>
-            <li>Say the sound out loud.</li>
-            <li>Trace the letters on the worksheet.</li>
-            <li>Color the letters together.</li>
-          </ul>
-
+          <button
+            class="sound-btn"
+            onclick="playAudio('../assets/audio/alpha.m4a')">
+            🔊 Play Alpha
+          </button>
         </div>
 
       </div>
 
-      <!-- RIGHT SIDEBAR -->
-      <aside class="card">
+      <div class="card">
+        <h3>Follow Along</h3>
+        <ol class="checklist">
+          <li>Point to the Big Alpha: Ⲁ</li>
+          <li>Point to the Small Alpha: ⲁ</li>
+          <li>Say “Alpha” out loud.</li>
+          <li>Trace the letter on the worksheet.</li>
+          <li>Color the letter Alpha.</li>
+        </ol>
+      </div>
 
-        <h3>Lesson Goals</h3>
+      <div class="card quiz-card">
+        <h3>Quick Quiz</h3>
+        <p>Which one is the Big Alpha?</p>
 
-        <ul class="checklist">
-          <li>Recognize Big Alpha.</li>
-          <li>Recognize Small Alpha.</li>
-          <li>Hear the sound clearly.</li>
-          <li>Repeat after the lesson.</li>
-          <li>Practice tracing and coloring.</li>
-        </ul>
+        <button class="sound-btn" onclick="checkAnswer(this, true)">Ⲁ</button>
+        <button class="sound-btn" onclick="checkAnswer(this, false)">ⲁ</button>
 
-        <a
-          class="btn primary"
-          href="../pdfs/Coptic_L101_2016.pdf">
+        <p class="quiz-result"></p>
+      </div>
 
-          Open Worksheet PDF
+      <div class="card quiz-card">
+        <h3>Sound Check</h3>
+        <p>What sound does Alpha make?</p>
 
-        </a>
+        <button class="sound-btn" onclick="checkAnswer(this, true)">A</button>
+        <button class="sound-btn" onclick="checkAnswer(this, false)">M</button>
+        <button class="sound-btn" onclick="checkAnswer(this, false)">T</button>
 
-      </aside>
+        <p class="quiz-result"></p>
+      </div>
 
     </div>
 
-  </section>
+    <aside class="card">
+      <h3>Lesson Goals</h3>
+
+      <ul class="checklist">
+        <li>Recognize Big Alpha.</li>
+        <li>Recognize Small Alpha.</li>
+        <li>Hear the sound clearly.</li>
+        <li>Repeat after the lesson.</li>
+        <li>Practice tracing and coloring.</li>
+      </ul>
+
+      <a class="btn primary" href="../pdfs/Coptic_L101_2016.pdf">
+        Open Worksheet PDF
+      </a>
+    </aside>
+
+  </div>
+</section>
 
 </main>
 
 <footer class="footer">
-  <div class="wrap">
-    Level 101 • Alpha Lesson
-  </div>
+  <div class="wrap">Level 101 • Alpha Lesson</div>
 </footer>
 
 <script src="../assets/js/app.js"></script>
