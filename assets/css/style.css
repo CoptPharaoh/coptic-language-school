@@ -1,8 +1,6 @@
 :root{
   --bg:#fbf7ee;
   --card:rgba(255,253,248,.96);
-  --pattern-cross:rgba(138,31,31,.1);
-  --pattern-gold:rgba(199,155,69,.08);
   --ink:#26221b;
   --muted:#70675a;
   --brand:#8a1f1f;
@@ -20,13 +18,11 @@ body{
   margin:0;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
   background:
-    radial-gradient(circle at 20% 18%, rgba(255,255,255,.86), transparent 34%),
-    radial-gradient(circle at 78% 72%, rgba(199,155,69,.06), transparent 30%),
-    var(--bg)
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='300' viewBox='0 0 360 300'%3E%3Cg fill='none' stroke='%238a1f1f' stroke-width='1.35' stroke-linecap='round' stroke-linejoin='round' opacity='.105'%3E%3Cpath d='M84 42v68M50 76h68M84 42c8 12 16 18 28 20M84 42c-8 12-16 18-28 20M84 110c8-12 16-18 28-20M84 110c-8-12-16-18-28-20M50 76c12-8 18-16 20-28M50 76c12 8 18 16 20 28M118 76c-12-8-18-16-20-28M118 76c-12 8-18 16-20 28'/%3E%3Cpath d='M256 16v58M227 45h58M256 16c7 10 14 15 24 17M256 16c-7 10-14 15-24 17M256 74c7-10 14-15 24-17M256 74c-7-10-14-15-24-17M227 45c10-7 15-14 17-24M227 45c10 7 15 14 17 24M285 45c-10-7-15-14-17-24M285 45c-10 7-15 14-17 24'/%3E%3Cpath d='M252 178v76M214 216h76M252 178c9 13 18 20 31 22M252 178c-9 13-18 20-31 22M252 254c9-13 18-20 31-22M252 254c-9-13-18-20-31-22M214 216c13-9 20-18 22-31M214 216c13 9 20 18 22 31M290 216c-13-9-20-18-22-31M290 216c-13 9-20 18-22 31'/%3E%3C/g%3E%3Cg fill='%23c79b45' opacity='.075'%3E%3Cpath d='M176 132l8 8-8 8-8-8zM324 118l6 6-6 6-6-6zM130 246l6 6-6 6-6-6z'/%3E%3C/g%3E%3C/svg%3E");
+    linear-gradient(rgba(251,247,238,.42), rgba(251,247,238,.42)),
+    url("../images/official-site-background.png");
   background-color:var(--bg);
-  background-size:auto, auto, 430px 360px;
-  background-position:0 0, 0 0, center top;
+  background-size:auto, 420px auto;
+  background-position:0 0, center top;
   background-repeat:repeat;
   background-attachment:fixed;
   color:var(--ink);
@@ -82,8 +78,8 @@ body{
 }
 
 .site-logo{
-  width:78px;
-  height:64px;
+  width:88px;
+  height:72px;
   flex:0 0 auto;
   display:block;
   border-radius:0;
@@ -524,7 +520,7 @@ body{
   }
 
   .site-logo{
-    width:62px;
-    height:52px;
+    width:68px;
+    height:56px;
   }
 }
