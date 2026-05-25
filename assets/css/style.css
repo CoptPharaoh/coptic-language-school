@@ -276,6 +276,28 @@ body{
   border:0;
 }
 
+.copticforall-lesson .lesson-layout{
+  gap:18px;
+}
+
+.copticforall-lesson .lesson-main{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.copticforall-lesson .lesson-main > h2,
+.copticforall-lesson .audio-grid,
+.copticforall-lesson .lesson-main > .card{
+  width:100%;
+  max-width:720px;
+  margin-inline:auto;
+}
+
+.copticforall-lesson .audio-grid{
+  grid-template-columns:1fr;
+}
+
 /* EXTRA PRACTICE */
 
 .extra-practice-card{
@@ -295,7 +317,15 @@ body{
   max-width:680px;
 }
 
+.extra-practice-card .practice-instruction{
+  margin-top:10px;
+  color:var(--ink);
+  font-weight:800;
+}
+
 .practice-embed{
+  max-width:900px;
+  margin-inline:auto;
   overflow:hidden;
   border:1px solid var(--line);
   border-radius:var(--radius);
@@ -306,7 +336,7 @@ body{
 .practice-embed iframe{
   display:block;
   width:100%;
-  height:900px;
+  height:880px;
   border:0;
   background:#fff;
 }
