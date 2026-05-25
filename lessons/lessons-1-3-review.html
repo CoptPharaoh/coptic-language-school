@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,24 +9,31 @@
 </head>
 
 <body>
+
 <header class="topbar">
   <div class="wrap nav">
     <a class="brand" href="../index.html">
       <span class="seal">✚</span>
       <span>Learn Coptic</span>
     </a>
+
     <nav class="links">
       <a href="../levels/level101.html">Level 101</a>
+      <a href="../recording-workflow.html">Workflow</a>
     </nav>
   </div>
 </header>
 
 <main>
+
 <section class="lesson-hero">
   <div class="wrap">
     <span class="badge">Level 101 • Review</span>
     <h1>Lessons 1–3 Matching Review</h1>
-    <p>Click an English letter, then click the matching Coptic letter, then click the correct name.</p>
+    <p>
+      Click an English letter, then click the matching Coptic letter,
+      then click the correct name.
+    </p>
   </div>
 </section>
 
@@ -34,11 +42,16 @@
 
     <div class="card">
       <h2>Interactive Matching</h2>
-      <p id="matchStatus">Start by clicking an English letter.</p>
+
+      <p id="matchStatus" class="note">
+        Start by clicking an English letter.
+      </p>
 
       <div class="matching-board">
+
         <div class="match-column">
           <h3>English Letter</h3>
+
           <button class="match-btn" data-group="alpha" data-type="english">A a</button>
           <button class="match-btn" data-group="veeta" data-type="english">B b</button>
           <button class="match-btn" data-group="eyy" data-type="english">E e</button>
@@ -47,32 +60,42 @@
 
         <div class="match-column">
           <h3>Coptic Letter</h3>
-          <button class="match-btn coptic-option" data-group="eyy" data-type="coptic">Ⲉ ⲉ</button>
-          <button class="match-btn coptic-option" data-group="alpha" data-type="coptic">Ⲁ ⲁ</button>
-          <button class="match-btn coptic-option" data-group="zeeta" data-type="coptic">Ⲍ ⲍ</button>
-          <button class="match-btn coptic-option" data-group="veeta" data-type="coptic">Ⲃ ⲃ</button>
+
+          <button class="match-btn coptic" data-group="eyy" data-type="coptic">Ⲉ ⲉ</button>
+          <button class="match-btn coptic" data-group="alpha" data-type="coptic">Ⲁ ⲁ</button>
+          <button class="match-btn coptic" data-group="zeeta" data-type="coptic">Ⲍ ⲍ</button>
+          <button class="match-btn coptic" data-group="veeta" data-type="coptic">Ⲃ ⲃ</button>
         </div>
 
         <div class="match-column">
           <h3>Name</h3>
+
           <button class="match-btn" data-group="zeeta" data-type="name">Zeeta</button>
           <button class="match-btn" data-group="veeta" data-type="name">Veeta</button>
           <button class="match-btn" data-group="eyy" data-type="name">Eyy</button>
           <button class="match-btn" data-group="alpha" data-type="name">Alpha</button>
         </div>
+
       </div>
 
-      <button class="btn primary" onclick="resetMatching()">Reset Activity</button>
+      <button class="btn primary" onclick="resetMatching()">
+        Reset Activity
+      </button>
+
     </div>
 
   </div>
 </section>
+
 </main>
 
 <footer class="footer">
-  <div class="wrap">Level 101 • Lessons 1–3 Review</div>
+  <div class="wrap">
+    Level 101 • Lessons 1–3 Review
+  </div>
 </footer>
 
 <script src="../assets/js/app.js"></script>
+
 </body>
 </html>
