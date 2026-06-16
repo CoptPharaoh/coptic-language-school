@@ -180,6 +180,16 @@ function setupMazeCanvas() {
 
     window.addEventListener("resize", resizeCanvas);
 
+    const image = wrapper.querySelector("img");
+
+    if (image) {
+      if (image.complete) {
+        resizeCanvas();
+      } else {
+        image.addEventListener("load", resizeCanvas, { once: true });
+      }
+    }
+
     function getPosition(event) {
       const rect = canvas.getBoundingClientRect();
       const touch = event.touches ? event.touches[0] : event;
