@@ -51,8 +51,30 @@
 
           <button
             class="sound-btn"
-            onclick="playAudio('../assets/audio/ghamma.m4a')">
-            🔊 Play Ghamma
+            onclick="playAudio('../assets/audio/Gamma (G).m4a')">
+            🔊 Play G Sound
+          </button>
+        </div>
+
+        <div class="sound-card">
+          <div class="coptic">Ⲅ ⲅ</div>
+          <p>Ghamma makes the sound “Gh.”</p>
+
+          <button
+            class="sound-btn"
+            onclick="playAudio('../assets/audio/Gamma (Gh) (غ).m4a')">
+            🔊 Play Gh Sound
+          </button>
+        </div>
+
+        <div class="sound-card">
+          <div class="coptic">Ⲅ ⲅ</div>
+          <p>Ghamma makes the sound “N.”</p>
+
+          <button
+            class="sound-btn"
+            onclick="playAudio('../assets/audio/Gamma (N).m4a')">
+            🔊 Play N Sound
           </button>
         </div>
       </div>
@@ -83,6 +105,8 @@
         <p>What sound does Ghamma make?</p>
 
         <button class="sound-btn" onclick="checkAnswer(this, true)">G</button>
+        <button class="sound-btn" onclick="checkAnswer(this, true)">Gh</button>
+        <button class="sound-btn" onclick="checkAnswer(this, true)">N</button>
         <button class="sound-btn" onclick="checkAnswer(this, false)">A different sound</button>
 
         <p class="quiz-result"></p>

@@ -51,8 +51,30 @@
 
           <button
             class="sound-btn"
-            onclick="playAudio('../assets/audio/key.m4a')">
-            🔊 Play Key
+            onclick="playAudio('../assets/audio/X (Kei) (K).m4a')">
+            🔊 Play K Sound
+          </button>
+        </div>
+
+        <div class="sound-card">
+          <div class="coptic">Ⲭ ⲭ</div>
+          <p>Key makes the sound “Kh.”</p>
+
+          <button
+            class="sound-btn"
+            onclick="playAudio('../assets/audio/X (Kei) (Kh).m4a')">
+            🔊 Play Kh Sound
+          </button>
+        </div>
+
+        <div class="sound-card">
+          <div class="coptic">Ⲭ ⲭ</div>
+          <p>Key makes the sound “Sh.”</p>
+
+          <button
+            class="sound-btn"
+            onclick="playAudio('../assets/audio/X (Kei) (Sh).m4a')">
+            🔊 Play Sh Sound
           </button>
         </div>
       </div>
@@ -83,6 +105,8 @@
         <p>What sound does Key make?</p>
 
         <button class="sound-btn" onclick="checkAnswer(this, true)">K</button>
+        <button class="sound-btn" onclick="checkAnswer(this, true)">Kh</button>
+        <button class="sound-btn" onclick="checkAnswer(this, true)">Sh</button>
         <button class="sound-btn" onclick="checkAnswer(this, false)">A different sound</button>
 
         <p class="quiz-result"></p>

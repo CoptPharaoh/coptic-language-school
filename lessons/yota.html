@@ -51,8 +51,19 @@
 
           <button
             class="sound-btn"
-            onclick="playAudio('../assets/audio/yota.m4a')">
-            🔊 Play Yota
+            onclick="playAudio('../assets/audio/I (I).m4a')">
+            🔊 Play I Sound
+          </button>
+        </div>
+
+        <div class="sound-card">
+          <div class="coptic">Ⲓ ⲓ</div>
+          <p>Yota makes the sound “Y.”</p>
+
+          <button
+            class="sound-btn"
+            onclick="playAudio('../assets/audio/I (Y).m4a')">
+            🔊 Play Y Sound
           </button>
         </div>
       </div>
@@ -83,6 +94,7 @@
         <p>What sound does Yota make?</p>
 
         <button class="sound-btn" onclick="checkAnswer(this, true)">I</button>
+        <button class="sound-btn" onclick="checkAnswer(this, true)">Y</button>
         <button class="sound-btn" onclick="checkAnswer(this, false)">A different sound</button>
 
         <p class="quiz-result"></p>

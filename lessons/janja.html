@@ -47,12 +47,23 @@
       <div class="audio-grid">
         <div class="sound-card">
           <div class="coptic">Ϫ ϫ</div>
+          <p>Janja makes the sound “G.”</p>
+
+          <button
+            class="sound-btn"
+            onclick="playAudio('../assets/audio/Ganga (G).m4a')">
+            🔊 Play G Sound
+          </button>
+        </div>
+
+        <div class="sound-card">
+          <div class="coptic">Ϫ ϫ</div>
           <p>Janja makes the sound “J.”</p>
 
           <button
             class="sound-btn"
-            onclick="playAudio('../assets/audio/janja.m4a')">
-            🔊 Play Janja
+            onclick="playAudio('../assets/audio/Ganga (J).m4a')">
+            🔊 Play J Sound
           </button>
         </div>
       </div>
@@ -82,6 +93,7 @@
         <h3>Sound Check</h3>
         <p>What sound does Janja make?</p>
 
+        <button class="sound-btn" onclick="checkAnswer(this, true)">G</button>
         <button class="sound-btn" onclick="checkAnswer(this, true)">J</button>
         <button class="sound-btn" onclick="checkAnswer(this, false)">A different sound</button>
 

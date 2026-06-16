@@ -51,8 +51,19 @@
 
           <button
             class="sound-btn"
-            onclick="playAudio('../assets/audio/delta.m4a')">
-            🔊 Play Delta
+            onclick="playAudio('../assets/audio/Delta (D).m4a')">
+            🔊 Play D Sound
+          </button>
+        </div>
+
+        <div class="sound-card">
+          <div class="coptic">Ⲇ ⲇ</div>
+          <p>Delta makes the sound “Th.”</p>
+
+          <button
+            class="sound-btn"
+            onclick="playAudio('../assets/audio/Delta (Th) (ذ).m4a')">
+            🔊 Play Th Sound
           </button>
         </div>
       </div>
@@ -83,6 +94,7 @@
         <p>What sound does Delta make?</p>
 
         <button class="sound-btn" onclick="checkAnswer(this, true)">D</button>
+        <button class="sound-btn" onclick="checkAnswer(this, true)">Th</button>
         <button class="sound-btn" onclick="checkAnswer(this, false)">A different sound</button>
 
         <p class="quiz-result"></p>

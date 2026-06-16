@@ -47,12 +47,34 @@
       <div class="audio-grid">
         <div class="sound-card">
           <div class="coptic">Ⲩ ⲩ</div>
-          <p>Epsilon makes the sound “V / Ou / Ee.”</p>
+          <p>Epsilon makes the sound “I.”</p>
 
           <button
             class="sound-btn"
-            onclick="playAudio('../assets/audio/epsilon.m4a')">
-            🔊 Play Epsilon
+            onclick="playAudio('../assets/audio/Epsilon (I).m4a')">
+            🔊 Play I Sound
+          </button>
+        </div>
+
+        <div class="sound-card">
+          <div class="coptic">Ⲩ ⲩ</div>
+          <p>Epsilon makes the sound “Oo.”</p>
+
+          <button
+            class="sound-btn"
+            onclick="playAudio('../assets/audio/Epsilon (oo).m4a')">
+            🔊 Play Oo Sound
+          </button>
+        </div>
+
+        <div class="sound-card">
+          <div class="coptic">Ⲩ ⲩ</div>
+          <p>Epsilon makes the sound “V.”</p>
+
+          <button
+            class="sound-btn"
+            onclick="playAudio('../assets/audio/Epsilon (V).m4a')">
+            🔊 Play V Sound
           </button>
         </div>
       </div>
@@ -82,7 +104,9 @@
         <h3>Sound Check</h3>
         <p>What sound does Epsilon make?</p>
 
-        <button class="sound-btn" onclick="checkAnswer(this, true)">V / Ou / Ee</button>
+        <button class="sound-btn" onclick="checkAnswer(this, true)">I</button>
+        <button class="sound-btn" onclick="checkAnswer(this, true)">Oo</button>
+        <button class="sound-btn" onclick="checkAnswer(this, true)">V</button>
         <button class="sound-btn" onclick="checkAnswer(this, false)">A different sound</button>
 
         <p class="quiz-result"></p>
