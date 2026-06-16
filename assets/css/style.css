@@ -14,6 +14,10 @@
   box-sizing:border-box;
 }
 
+html{
+  overflow-x:hidden;
+}
+
 body{
   margin:0;
   font-family:Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
@@ -26,11 +30,32 @@ body{
   background-attachment:fixed;
   color:var(--ink);
   line-height:1.6;
+  overflow-x:hidden;
+}
+
+img,
+iframe,
+canvas{
+  max-width:100%;
 }
 
 .wrap{
   width:min(1120px,92vw);
   margin:auto;
+}
+
+.wrap > *,
+.grid > *,
+.lesson-list > *,
+.lesson-layout > *,
+.audio-grid > *,
+.vocab-grid > *,
+.matching-board > *,
+.lesson-main,
+.card,
+.sound-card,
+.vocab-card{
+  min-width:0;
 }
 
 /* TOP BAR */
@@ -49,6 +74,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:18px;
   padding:10px 0;
 }
 
@@ -60,6 +86,11 @@ body{
   color:var(--ink);
   font-weight:800;
   font-size:1.35rem;
+  min-width:0;
+}
+
+.brand span{
+  overflow-wrap:anywhere;
 }
 
 .seal{
@@ -159,6 +190,7 @@ body{
   align-items:center;
   gap:8px;
   cursor:pointer;
+  white-space:normal;
   transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
 
@@ -261,6 +293,7 @@ body{
 
 .video-box{
   aspect-ratio:16/9;
+  width:100%;
   background:#17120e;
   border-radius:var(--radius);
   overflow:hidden;
@@ -327,6 +360,7 @@ body{
 }
 
 .practice-embed{
+  width:100%;
   max-width:900px;
   margin-inline:auto;
   overflow:hidden;
@@ -381,6 +415,7 @@ body{
   text-align:left;
   cursor:pointer;
   font-weight:800;
+  white-space:normal;
   transition:.2s;
 }
 
@@ -428,9 +463,13 @@ body{
 
 .matching-board{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:18px;
   margin:24px 0;
+}
+
+.matching-board[data-required-matches="2"]{
+  grid-template-columns:repeat(2,minmax(0,1fr));
 }
 
 .match-column{
@@ -445,8 +484,12 @@ body{
   border-radius:14px;
   padding:16px;
   font-size:1.3rem;
+  line-height:1.25;
   cursor:pointer;
   font-weight:700;
+  overflow-wrap:anywhere;
+  text-align:center;
+  white-space:normal;
   transition:.2s;
 }
 
@@ -519,6 +562,35 @@ body{
   display:none;
 }
 
+@media(max-width:1024px){
+
+  .wrap{
+    width:min(1040px,94vw);
+  }
+
+  .site-logo{
+    width:76px;
+    height:76px;
+  }
+
+  .brand{
+    gap:14px;
+    font-size:1.2rem;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .lesson-layout{
+    grid-template-columns:1.15fr .85fr;
+  }
+
+  .practice-embed iframe{
+    height:780px;
+  }
+}
+
 @media(max-width:800px){
 
   .links{
@@ -538,6 +610,10 @@ body{
     grid-template-columns:1fr;
   }
 
+  .wrap{
+    width:min(100% - 28px,1120px);
+  }
+
   .extra-practice-card{
     display:block;
   }
@@ -551,7 +627,25 @@ body{
   }
 
   .hero{
-    padding-top:38px;
+    padding:38px 0 26px;
+  }
+
+  .lesson-hero{
+    padding:28px 0 16px;
+  }
+
+  .section{
+    padding:26px 0;
+  }
+
+  .actions{
+    width:100%;
+  }
+
+  .actions .btn,
+  .canvas-toolbar .btn{
+    width:100%;
+    justify-content:center;
   }
 
   .card{
@@ -582,10 +676,59 @@ body{
 
   .match-btn{
     font-size:1.1rem;
+    padding:14px;
   }
 
   .site-logo{
     width:62px;
     height:62px;
+  }
+}
+
+@media(max-width:480px){
+
+  .wrap{
+    width:min(100% - 22px,1120px);
+  }
+
+  .site-logo{
+    width:52px;
+    height:52px;
+  }
+
+  .brand{
+    gap:10px;
+    font-size:.95rem;
+  }
+
+  .card,
+  .sound-card,
+  .vocab-card{
+    padding:14px;
+  }
+
+  .lesson-hero h1{
+    font-size:clamp(30px,10vw,44px);
+  }
+
+  .hero h1{
+    font-size:clamp(34px,11vw,52px);
+  }
+
+  .badge{
+    font-size:13px;
+  }
+
+  .match-btn{
+    font-size:1rem;
+    padding:13px;
+  }
+
+  .practice-embed iframe{
+    height:640px;
+  }
+
+  .maze-wrapper{
+    border-radius:12px;
   }
 }
